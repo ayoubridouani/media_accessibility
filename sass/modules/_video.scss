@@ -1,0 +1,262 @@
+.media-type{
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+.movie, .tvshow, .song{
+    width: 33.33%;
+    padding:30px;
+}
+
+.items img{
+    width: 100%;
+    height: 220px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover, .active{
+    border: 3px solid red;
+    }
+}
+
+.video-template{
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+}
+
+.controller{
+    color: white;
+    position: absolute;
+    height: 45px;
+    bottom: -60px;
+
+    i, label, input{
+    position: absolute;
+    cursor: pointer;
+    }
+
+    .video_state{
+    bottom: 45px;
+    outline: none;
+    background: none;
+    }
+
+    .fa-volume-up, .fa-volume-down, .fa-volume-mute{
+    font-size: 25px;
+    left: 10px;
+    padding-top: 10px;
+    }
+
+    .volume_change{
+    width: 60px;
+    height: 4px;
+    outline: none;
+    left: 43px;
+    bottom: 21px;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #FFF;
+    }
+    }
+
+    .fa-angle-double-left{
+    font-size: 40px;
+    left: calc(50% - 60px);
+    padding: 2px 0px;
+    }
+
+    .current_time{
+    left: calc(50% - 130px);
+    padding: 12px 0px;
+    }
+
+    .fa-play, .fa-pause{
+    width: 48px;
+    font-size: 30px;
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 5px 12px;
+    left: calc(50% - 24px);
+    }
+
+    .fa-pause{
+    width: 56px;
+    left: calc(50% - 28px);
+    width: 50px;
+    left: calc(50% - 26px);
+    padding: 5px 9px;
+    }
+
+    .fa-angle-double-right{
+    font-size: 40px;
+    right: calc(50% - 60px);
+    padding: 2px 0px;
+    }
+
+    .total_time{
+    right: calc(50% - 130px);
+    padding: 12px 0px;
+    }
+
+    .fa-closed-captioning{
+    font-size: 28px;
+    right: 54px;
+    padding-top: 9px;
+    }
+
+    .fa-expand{
+    font-size: 28px;
+    right: 14px;
+    padding-top: 9px;
+    }
+}
+
+// excess height to improve interactive area / accessibility
+$height: 30px;
+$thumb-height: 13px;
+$track-height: 3px;
+
+// colours
+$upper-color: red;
+$lower-color: red;
+$thumb-color: red;
+$thumb-hover-color: red;
+
+$upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+
+// Webkit cannot style progress so we fake it with a long shadow
+// on the thumb element
+@function webkit-slider-thumb-shadow($i: 1) {
+    $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+    @if $i == 1 {
+    @for $k from 2 through 1000 {
+        $val: #{$val}, webkit-slider-thumb-shadow($k);
+    }
+    }
+    @return $val;
+}
+
+.video_state {
+    display: block;
+    appearance: none;
+    width: 100%;
+    margin: 0;
+    height: $height;
+    overflow: hidden;
+    cursor: pointer;
+    
+    &:focus {
+    outline: none;
+    }
+}
+
+// Webkit
+.video_state::-webkit-slider-runnable-track {
+    width: 100%;
+    height: $height;
+    background: $lower-background;
+}
+
+.video_state::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    height: $thumb-height;
+    width: $thumb-height;
+    background: $thumb-color;
+    border-radius: 100%;
+    border: 0;
+    top: 50%;
+    margin-top: (-$thumb-height/2);
+    transition: background-color 150ms;
+}
+.video_state:after::-webkit-slider-thumb {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+// Firefox
+.video_state::-moz-range-track, .video_state::-moz-range-progress {
+    width: 100%;
+    height: $height;
+    background: $upper-background;
+}
+
+.video_state::-moz-range-progress {
+    background: $lower-background;
+}
+
+.video_state::-moz-range-thumb {
+    appearance: none;
+    margin: 0;
+    height: $thumb-height;
+    width: $thumb-height;
+    background: $thumb-color;
+    border-radius: 100%;
+    border: 0;
+    transition: background-color 150ms;
+}
+
+// Internet Exploder
+.video_state::-ms-track {
+    width: 100%;
+    height: $height;
+    border: 0;
+    // color needed to hide track marks
+    color: transparent;
+    background: transparent;
+}
+
+.video_state::-ms-fill-lower {
+    background: $lower-background;
+}
+
+.video_state::-ms-fill-upper {
+    background: $upper-background;
+}
+
+.video_state::-ms-thumb {
+    appearance: none;
+    height: $thumb-height;
+    width: $thumb-height;
+    background: $thumb-color;
+    border-radius: 100%;
+    border: 0;
+    transition: background-color 150ms;
+    // IE Edge thinks it can support -webkit prefixes
+    top: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.video_state:hover,
+.video_state:focus {
+
+    &::-webkit-slider-thumb {
+    background-color: $thumb-hover-color;
+    }
+    &::-moz-range-thumb {
+    background-color: $thumb-hover-color;
+    }
+    &::-ms-thumb {
+    background-color: $thumb-hover-color;
+    }
+}
+
+video::cue {
+    background-color: black !important;
+    overflow: visible !important;
+}

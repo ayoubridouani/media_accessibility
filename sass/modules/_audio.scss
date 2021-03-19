@@ -1,0 +1,155 @@
+.audio-player {
+    color: white;
+    position: relative;
+    width: 600px;
+    margin: auto;
+    display: none;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+
+.controls button {
+    padding: 4px;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.left-controls {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.right-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.progress-slider-background {
+    background-color: #8ea2ec;
+    cursor: pointer;
+    padding-right: 7px;
+    box-sizing: border-box;
+}
+
+.progress-slider {
+    position: relative;
+    pointer-events: none;
+    background-color: #3357d4;
+    height: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 0%;
+    padding-left: 7px;
+    box-sizing: border-box;
+}
+
+.progress-slider::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #3357d4;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.playback-time {
+    font-family: "Roboto", sans-serif;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.playback-time-highlight {
+    color: #3357d4;
+}
+
+.volume-group {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+}
+
+.volume-slider-background {
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    background-color: #8ea2ec;
+    margin-left: 5px;
+    margin-bottom: 1px;
+    margin-right: 13px;
+}
+
+.volume-slider {
+    pointer-events: none;
+    position: relative;
+    height: 8px;
+    width: 100%;
+    background-color: #3357d4;
+}
+
+.volume-slider::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #3357d4;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.audio-player button {
+    cursor: pointer;
+    margin-right: 3px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.controls .replay-button {
+    margin-right: 0px;
+}
+
+.material-icons {
+    font-size: 34px;
+}
+
+.material-icons-copy {
+    font-size: 20px;
+}
+
+.material-icons-replayforward {
+    font-size: 28px;
+}
+
+.material-icons-playbackspeed {
+    font-size: 30px;
+    margin-right: 2px;
+}
+
+.material-icons-volume {
+    font-size: 28px;
+}
+
+.transcript{
+    color: red;
+}

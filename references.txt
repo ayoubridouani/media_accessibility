@@ -1,0 +1,21 @@
+// HTML Audio:
+https://www.w3schools.com/html/html5_audio.asp
+
+// HTML Video:
+https://www.w3schools.com/html/html5_video.asp
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+
+// HTML Audio/Video DOM Reference:
+https://www.w3schools.com/tags/ref_av_dom.asp
+
+// Adding captions and subtitles to HTML5 video:
+https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
+
+// How to Add Captions and Subtitles to HTML5 Videos:
+https://www.rev.com/blog/resources/how-to-add-captions-and-subtitles-to-html5-videos
+
+// HTML5 video javascript controls - restart video:
+https://stackoverflow.com/questions/8402158/html5-video-javascript-controls-restart-video/20501813
+
+// HTML5 Video Events and API:
+https://www.w3.org/2010/05/video/mediaevents.html

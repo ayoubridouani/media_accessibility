@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Media Accessibility</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <div class="container mt-3">
+            <div class="text-white h3 text-center">
+                <p>Welcome to A A Media Player.</p>
+                <p>Enjoy your Time!</p>
+            </div>
+            <div class="row items ml-0 mr-0">
+                <div class="movie">
+                    <img src="images/movie.png">
+                    <label class="text-center media-type w-100">Movie</label>
+                </div>
+                <div class="tvshow">
+                    <img src="images/tvshow.png">
+                    <label class="text-center media-type w-100">TV Show</label>
+                </div>
+                <div class="song">
+                    <img src="images/song.png">
+                    <label class="text-center media-type w-100">Music</label>
+                </div>
+            </div>
+            <div class="video-template">
+                <video class="video w-100 h-100">
+                    <track class="subtitles" label="English" kind="subtitles" srclang="en" src="subtitles/video.vtt" default>
+                    <source src="videos/video1.mp4" />
+                </video>
+                <div class="controller w-100">
+                    <input type="range" class="video_state w-100" min="0" max="100" step="1" value="0">
+                    <i class="toggle_volume fa fa-volume-up"></i>
+                    <input type="range" class="volume_change" min="0" max="1" step="0.1" value="1">
+                    <label class="current_time">00:00:00</label>
+                    <i class="fa fa-angle-double-left"></i>
+                    <i class="toggle_play fa fa-play"></i>
+                    <i class="fa fa-angle-double-right"></i>
+                    <label class="total_time">00:00:00</label>
+                    <i class="captioning far fa-closed-captioning"></i>
+                    <i class="toggleFullscreen fa fa-expand"></i> 
+                </div>
+            </div>
+            <div class="audio-player">
+                <img src="images/song.png">
+                <audio class="audio">
+                    <source src="audios/audio.mp3">
+                </audio>
+                <input type="range" class="audio_state w-100" min="0" max="100" step="1" value="0">
+                <div class="controls">
+                    <div class="left-controls">
+                        <button class="play"> <i class="material-icons">play_arrow</i> </button>
+                        <button class="pause" style="display:none"> <i class="material-icons">pause</i> </button>
+                        <button class="replay replay-button"> <i class="material-icons material-icons-replayforward"> replay_10 </i> </button>
+                        <button class="forward"> <i class="material-icons material-icons-replayforward"> forward_10 </i> </button>
+                    </div>
+                    <div class="right-controls">
+                        <span class="playback-time"> 0:00 / 0:00 </span>
+                        <div class="volume-group">
+                            <button class="volume"> <i class="material-icons material-icons-volume"> volume_up</i> </button>
+                            <input type="range" class="audio_volume_change" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="transcript">
+                    Whoa! I feel good, I knew that I would, now
+                    I feel good, I knew that I would, now
+                    So good, so good, I got you
+                    Whoa! I feel nice, like sugar and spice
+                    I feel nice, like sugar and spice
+                    So nice, so nice, I got you
+                    When I hold you in my arms
+                    I know that I can't do no wrong
+                    And when I hold you in my arms
+                    My love won't do you no harm
+                    And I feel nice, like sugar and spice
+                    I feel nice, like sugar and spice
+                    So nice, so nice, I got you
+                    When I hold you in my arms
+                    I know that I can't do no wrong
+                    And when I hold you in my arms
+                    My love can't do me no harm
+                    And I feel nice, like sugar and spice
+                    I feel nice, like sugar and spice
+                    So nice, so nice, 'cause I got you
+                    Whoa! And I feel good, I knew that I would, now
+                    I feel good, I knew that I would
+                    So good, so good, 'cause I got you
+                    So good, so good, 'cause I got you
+                    So good, so good, 'cause I got you
+                    Hey
+                    Oh-whoo
+                </div>
+            </div>
+        </div>
+        <script src="js/plugin.js"></script>
+    </body>
+</html>
